@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fun Page</title>
+    <style>
+     /* CSS styles go here */
+     .container {
+        display: flex;
+        flex-wrap: wrap;
+        width: 60%;
+      }
+
+      .actions, .result {
+        width: 50%;
+        padding: 10px;
+        box-sizing: border-box;
+        
+      }
+
+      .actions {
+        background-color: #fed0d0;
+     text-align: center;      }
+
+      .result {
+        background-color: #a89595;
+        text-align: center;
+      }
+      button{
+width: 250px;
+margin: 10px;
+padding: 15px;
+border-radius: 50px;
+outline: none;
+border: none;
+background-color: rgb(88, 52, 88);
+color: #e6e6e6;
+text-transform: uppercase;
+font-weight: bolder;
+
+      }
+      p{
+        background-color: gray;
+        padding: 7px;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+    <header>
+      <h1>Welcome to Fun Page!</h1>
+    </header>
+    <div class="container">
+      <div class="actions">
+        <button onclick="showMeme()">Show a meme</button><br>
+        <button onclick="tellJoke()">Tell me a joke</button><br>
+        <button onclick="randomQuote()">Random quote</button><br>
+        <button onclick="riddleMe()">Riddle me</button><br>
+      </div>
+      <div class="result">
+        <p id="resultText">Click a button to have some fun!</p>
+        <button onclick="reset()">Reset</button>
+      </div>
+    </div>
+    </center>
+<script>
+    function showMeme() {
+  const resultText = document.getElementById("resultText");
+  resultText.innerHTML = '<img src="https://api.memegen.link/images/buzz/memes/memes_everywhere.gif" alt="Meme" width="250px">';
+}
+
+function tellJoke() {
+    const resultText = document.getElementById("resultText");
+  const jokes = [
+  "Why did the scarecrow win an award? Because he was outstanding in his field.",
+" Why did the melon jump into the lake? It wanted to be a water-melon.",
+ "Option key What did the duck say when it bought lipstick? “Put it on my bill.",
+ "What do you call a pig that does karate? A pork chop.",
+ "What has a bed that you can t sleep in? A river.",
+ "Why were the teacher s eyes crossed? She couldn t control her pupils.",
+" What starts with E ends with E and has only 1 letter in it? An Envelope.",
+  ];
+  const tellJoke = jokes[Math.floor(Math.random() * jokes.length)];
+  resultText.innerHTML = tellJoke;
+}
+
+function randomQuote() {
+  const resultText = document.getElementById("resultText");
+  const quotes = [
+    "The greatest glory in living lies not in never falling, but in rising every time we fall. -Nelson Mandela",
+    "The way to get started is to quit talking and begin doing. -Walt Disney",
+    "Your time is limited, don't waste it living someone else's life. -Steve Jobs",
+    "If life were predictable it would cease to be life, and be without flavor. -Eleanor Roosevelt",
+    "If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough. -Oprah Winfrey",
+    "If you set your goals ridiculously high and it's a failure, you will fail above everyone else's success. -James Cameron",
+    "Life is what happens when you're busy making other plans. -John Lennon"
+  ];
+  const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+  resultText.innerHTML = randomQuote;
+}
+
+function riddleMe() {
+  const resultText = document.getElementById("resultText");
+  const riddles = [
+    "What has a head and a tail, but no body?",
+    "What is always in front of you but can't be seen?",
+    "What has a heart that doesn't beat?",
+    "What is full of holes but still holds water?",
+    "What goes up but never comes down?"
+  ];
+  const randomRiddle = riddles[Math.floor(Math.random() * riddles.length)];
+  resultText.innerHTML = randomRiddle;
+}
+
+function reset() {
+  const resultText = document.getElementById("resultText");
+  resultText.innerHTML = "Click a button to have some fun!";
+}
+
+</script>
+
+
+
+</body></html>
